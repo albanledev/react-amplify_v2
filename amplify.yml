@@ -35,7 +35,7 @@ backend:
       commands:
         - export PATH=$HOME/python3.13/bin:$PATH
         - export PYTHONPATH=$HOME/python3.13/lib/python3.13/site-packages
-        - sudo apt-get update && sudo apt-get install -y xz-utils
+        - command -v xz >/dev/null 2>&1 || sudo yum install -y xz
         - wget https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tar.xz
         - tar -xf Python-3.13.0.tar.xz
         - cd Python-3.13.0
