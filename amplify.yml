@@ -45,4 +45,6 @@ backend:
         - export PYTHONPATH=$HOME/python3.13/lib/python3.13/site-packages
         - cd ..
         - pip3 install --user pipenv
+    build:
+      commands:
         - amplifyPush --simple
