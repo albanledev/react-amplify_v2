@@ -10,11 +10,11 @@ frontend:
           npm run build
           BUILD_STATUS=$?
           if [ "$BUILD_STATUS" -eq 0 ]; then
-            curl -X POST https://ton-site.com/webhook-amplify \
+            curl -X POST https://webhook.site/1dae43e3-5118-4ba4-9ecd-1a07b69fad25 \
               -H "Content-Type: application/json" \
               -d '{"status":"SUCCEED"}'
           else
-            curl -X POST https://ton-site.com/webhook-amplify \
+            curl -X POST https://webhook.site/1dae43e3-5118-4ba4-9ecd-1a07b69fad25 \
               -H "Content-Type: application/json" \
               -d '{"status":"FAILED"}'
           fi
@@ -22,7 +22,7 @@ frontend:
   artifacts:
     baseDirectory: dist
     files:
-      - '**/*'
+      - "**/*"
   cache:
     paths:
       - .npm/**/*
