@@ -4,14 +4,6 @@ frontend:
     preBuild:
       commands:
         - npm ci --cache .npm --prefer-offline
-        - wget https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tar.xz
-        - tar -xf Python-3.13.0.tar.xz
-        - cd Python-3.13.0
-        - ./configure --prefix=$HOME/python3.13
-        - make && make install
-        - export PATH=$HOME/python3.13/bin:$PATH
-        - export PYTHONPATH=$HOME/python3.13/lib/python3.13/site-packages
-        - cd ..
     test:
       commands:
         - npm run cy:run
@@ -43,3 +35,12 @@ backend:
       commands:
         - export PATH=$HOME/python3.13/bin:$PATH
         - export PYTHONPATH=$HOME/python3.13/lib/python3.13/site-packages
+        - sudo apt-get update && sudo apt-get install -y xz-utils
+        - wget https://www.python.org/ftp/python/3.13.0/Python-3.13.0.tar.xz
+        - tar -xf Python-3.13.0.tar.xz
+        - cd Python-3.13.0
+        - ./configure --prefix=$HOME/python3.13
+        - make && make install
+        - export PATH=$HOME/python3.13/bin:$PATH
+        - export PYTHONPATH=$HOME/python3.13/lib/python3.13/site-packages
+        - cd ..
