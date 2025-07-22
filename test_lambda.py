@@ -9,7 +9,6 @@ def test_lambda_exists():
 if __name__ == "__main__":
     test_lambda_exists()
     print("Lambda existence test passed.")
-    assert 'expected_key' in result  # Replace with your expected output
 
 if __name__ == "__main__":
     test_lambda()
