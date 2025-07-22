@@ -48,3 +48,7 @@ backend:
       commands:
         - pip3 install --user pipenv
         - amplifyPush --simple
+    test:
+      commands:
+        - pip3 install boto3
+        - python test_lambda.py
